@@ -1,0 +1,82 @@
+
+// $dark: #2c3e50;
+
+body{
+  background: $dark;
+  color: $light;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.wrap {
+  width: 740px;
+  // TOP RIGHT BOTTOM LEFT
+  margin: 0 300px 0px 100px;
+}
+
+.wider {
+  width: 1200px !important;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.title {
+  // text-align: center;
+  font-size: 6em;
+}
+.subtitle {
+  // text-align: center;
+  font-size: 2em;
+}
+
+
+#answers {
+  width: 100%;
+}
+
+.text-center {
+  text-align:center;
+}
+
+.answer-container {
+  margin-top: 10px;
+  padding: 0.25em 0.5em;
+  border: 5px solid $light;
+  font-size: 2.5em;
+}
+
+.position {
+  background-color: $primary;
+}
+
+.bottom-right{
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+}
+
+.top-right{
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+
+.wrong-sign{
+  color: $primary;
+  font-size: 3em;
+}
+
+.points {
+  background-color: $secondary;
+}
+// .answer-overlay{
+//   background-color: $dark;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 10;
+// }
+.answer-text{
+  padding-left: 10px;
+}
