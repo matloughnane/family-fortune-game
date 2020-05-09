@@ -51,6 +51,10 @@ function wrongAnswer() {
   playWrong();
 }
 
+function resetWrong() {
+  $('#wrong-col').empty();
+}
+
 // SOUNDS
 function playWrong() {
   var audio = document.getElementById("wrong");
