@@ -10,7 +10,7 @@ function generateQuiz(id) {
 
 function renderQuiz(id, question, answers) {
 
-  $("#next").attr("href", "/interstitial.html?id=" + (parseInt(id) + 1));
+  $("#next").attr("href", "interstitial.html?id=" + (parseInt(id) + 1));
 
   $('#question').html(question);
 
