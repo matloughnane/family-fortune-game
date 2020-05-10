@@ -254,7 +254,7 @@ const questiondata = [{
 const roundNames = ["Numero Uno", "Double Trouble", "Triple Points", "The 4th Round", "The Final Round", "Head to Head", "", "", "", "", "", "Final Final"]
 
 
-
+const quizTitle = {"title" : "Loughnane Family Fortunes", "subtitle": "Sponsored by COVID-19"}
 
 //
 // switch (parseInt(id)) {
