@@ -12,18 +12,14 @@
   <div class="container-fluid">
     <div class="wrap wider">
       <div class="row">
-        <h1 class="title">Loughnane Family Fortunes</h1>
-          <h2 class="subtitle">Sponsored by COVID-19</h2>
+        <h1 class="title" id="title"></h1>
+          <h2 class="subtitle" id="subtitle"></h2>
       </div>
     </div>
   </div>
 
 
   <div class="bottom-right">
-    <div class="row">
-      <button onclick="wrongAnswer()" class="btn btn-primary wrong">
-        WRONG <i class="fas fa-time-circle"></i></button>
-    </div>
     <div class="row">
       <a id="previous" class="btn btn-secondary navigation">
         <i class="fas fa-chevron-circle-left"></i></a>
@@ -45,10 +41,11 @@
 <script src="//kit.fontawesome.com/530791f70c.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-<script src="assets/js/common.min.js"></script>
-
+<script src="assets/js/common.js"></script>
+<script src="assets/js/data.js"></script>
 <script>
-
+$('#title').html(quizTitle["title"]);
+$('#subtitle').html(quizTitle["subtitle"]);
 </script>
 
 </html>
