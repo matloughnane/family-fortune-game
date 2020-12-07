@@ -3,3 +3,4 @@
 
 # IGNORE ALL NODE MODULES
 **/node_modules/
+.DS_Store
