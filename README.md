@@ -14,7 +14,7 @@ If a player get's an answer correct, the host can click the answer or the corres
 If a player get's it wrong, the host can click the wrong button or click the "x" key on their keyboard.
 If all 3 wrong answers are exhausted they can reset the wrong answer counter with the other red button.
 
-### Offline Version
+### Offline Version
 Alternatively if you wish to customise the game you can download the game using this [link](https://github.com/matloughnane/family-fortune-game/archive/master.zip)
 
 You can edit the file at: `assets/js/data.js`
