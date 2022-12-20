@@ -10,7 +10,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "node-sass": "^7.0.0"
+    "node-sass": "^7.0.3"
   },
   "dependencies": {
     "@babel/core": "^7.9.0"
