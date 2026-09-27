@@ -10,7 +10,12 @@ function generateQuiz(id) {
 
 function renderQuiz(id, question, answers) {
 
-  $("#next").attr("href", "interstitial.html?id=" + (parseInt(id) + 1));
+  if (parseInt(id) < questiondata.length) {
+    $("#next").attr("href", "interstitial.html?id=" + (parseInt(id) + 1));
+  } else {
+    // Last round: there is no next round, so hide the next button
+    $("#next").hide();
+  }
 
   $('#question').html(question);
 
@@ -42,7 +47,6 @@ function CorrectAnswer(quizID, answerID) {
   $('#answer-points' + answerID).addClass("points");
   $('#answer-points' + answerID).html(questiondata[quizID].answers[answerID].points);
   playCorrect();
-  addKeyDownListeners();
 }
 
 function wrongAnswer() {
