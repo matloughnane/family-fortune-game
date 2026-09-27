@@ -1,23 +1,25 @@
 // console.log("common");
 
 function generateQuiz(id) {
-  // console.log(id);
-  // console.log(data[parseInt(id)-1].question);
-  // console.log(data[parseInt(id)-1].answers);
-  renderQuiz(id, questiondata[parseInt(id) - 1].question, questiondata[parseInt(id) - 1].answers);
-
+  var round = getQuiz().rounds[parseInt(id) - 1];
+  if (!round) {
+    // The round doesn't exist (e.g. rounds were deleted in settings)
+    window.location.href = "index.html";
+    return;
+  }
+  renderQuiz(id, round.question, round.answers);
 }
 
 function renderQuiz(id, question, answers) {
 
-  if (parseInt(id) < questiondata.length) {
+  if (parseInt(id) < getQuiz().rounds.length) {
     $("#next").attr("href", "interstitial.html?id=" + (parseInt(id) + 1));
   } else {
     // Last round: there is no next round, so hide the next button
     $("#next").hide();
   }
 
-  $('#question').html(question);
+  $('#question').text(question);
 
   html = ""
   for (var i = 0; i < answers.length; i++) {
@@ -42,10 +44,14 @@ function addAnswerListeners(quizID) {
 }
 
 function CorrectAnswer(quizID, answerID) {
-  // console.log(questiondata[quizID].answers[answerID].answer);
-  $('#answer' + answerID).html(questiondata[quizID].answers[answerID].answer);
+  var answer = getQuiz().rounds[quizID].answers[answerID];
+  if (!answer) {
+    // No answer for this number key on this round
+    return;
+  }
+  $('#answer' + answerID).text(answer.answer);
   $('#answer-points' + answerID).addClass("points");
-  $('#answer-points' + answerID).html(questiondata[quizID].answers[answerID].points);
+  $('#answer-points' + answerID).text(answer.points);
   playCorrect();
 }
 
@@ -80,10 +86,8 @@ function goBack() {
 
 
 function getRoundSubtitle(id) {
-  console.log(id);
-  var roundID = (parseInt(id) - 1);
-  console.log(roundID);
-  return roundNames[roundID];
+  var round = getQuiz().rounds[parseInt(id) - 1];
+  return round ? round.name : "";
   //
   // switch (parseInt(id)) {
   //   case 1:
@@ -145,7 +149,7 @@ function addKeyDownListeners() {
     } else if (event.key == 9) {
       // alert('2');
       CorrectAnswer(quizID, 8);
-    } else if (event.key == "x") {
+    } else if (event.key == "x" || event.key == "X") {
       // alert('2');
       // CorrectAnswer(quizID, 8);
       wrongAnswer();

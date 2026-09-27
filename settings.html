@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Quiz Settings</title>
+  <link href="assets/css/c-styles.css" rel="stylesheet">
+  <link href="assets/css/settings.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body class="settings">
+  <header class="settings-header">
+    <div class="settings-header-inner">
+      <h1>Quiz settings</h1>
+      <div class="toolbar">
+        <a href="index.html" class="s-btn" id="play"><i class="fas fa-play"></i> Play</a>
+        <button type="button" class="s-btn s-btn-save" id="save"><i class="fas fa-save"></i> Save</button>
+      </div>
+    </div>
+    <div class="settings-header-inner status-row">
+      <span id="source-status"></span>
+      <span id="dirty-status" class="dirty-status" hidden>Unsaved changes</span>
+    </div>
+  </header>
+
+  <main class="settings-main">
+    <div id="storage-warning" class="notice notice-warning" hidden>
+      This browser won't let the game save your edits here (this can happen in Safari when the game is opened from
+      a downloaded folder). You can still edit the quiz and use <strong>Export</strong> or
+      <strong>Download as data.js</strong> below to keep it.
+    </div>
+
+    <div id="message" class="notice" role="status" aria-live="polite" hidden></div>
+
+    <section class="card">
+      <h2>Quiz details</h2>
+      <label class="field">
+        <span>Title</span>
+        <input type="text" id="quiz-title" autocomplete="off">
+      </label>
+      <label class="field">
+        <span>Subtitle</span>
+        <input type="text" id="quiz-subtitle" autocomplete="off">
+      </label>
+    </section>
+
+    <div id="rounds"></div>
+
+    <button type="button" class="s-btn s-btn-wide" id="add-round"><i class="fas fa-plus"></i> Add round</button>
+
+    <section class="card">
+      <h2>Back up or share</h2>
+      <p class="help">
+        Your edits are saved in this browser on this computer only. To use the quiz somewhere else, export it here
+        and import it there.
+      </p>
+      <div class="button-row">
+        <button type="button" class="s-btn" id="export"><i class="fas fa-file-export"></i> Export</button>
+        <button type="button" class="s-btn" id="import"><i class="fas fa-file-import"></i> Import</button>
+        <input type="file" id="import-file" accept=".json,application/json" hidden>
+      </div>
+
+      <h2>Make it the built-in quiz</h2>
+      <p class="help">
+        Download the quiz as a <code>data.js</code> file and replace <code>assets/js/data.js</code> in your copy of the
+        game (or your GitHub fork). It then becomes the quiz everyone sees by default.
+      </p>
+      <div class="button-row">
+        <button type="button" class="s-btn" id="download-datajs"><i class="fas fa-download"></i> Download as data.js</button>
+      </div>
+
+      <h2>Start again</h2>
+      <p class="help">Delete your saved edits and go back to the built-in quiz from <code>data.js</code>.</p>
+      <div class="button-row">
+        <button type="button" class="s-btn s-btn-danger" id="reset"><i class="fas fa-undo"></i> Reset to default</button>
+      </div>
+    </section>
+  </main>
+</body>
+
+<script src="https://kit.fontawesome.com/530791f70c.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/store.js"></script>
+<script src="assets/js/settings.js"></script>
+
+</html>
