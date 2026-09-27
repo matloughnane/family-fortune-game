@@ -1,0 +1,318 @@
+/* Settings page. Plain CSS (not built from Sass) so it works without a build step. */
+
+.settings {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.settings *,
+.settings *::before,
+.settings *::after {
+  box-sizing: border-box;
+}
+
+.settings h1 {
+  font-size: 1.75em;
+  margin: 0;
+}
+
+.settings h2 {
+  font-size: 1.25em;
+  margin: 0 0 0.75em;
+}
+
+.settings code {
+  background: rgba(236, 240, 241, 0.12);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Header */
+
+.settings-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #1B1464;
+  border-bottom: 1px solid rgba(236, 240, 241, 0.2);
+  padding: 12px 16px;
+}
+
+.settings-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.status-row {
+  font-size: 0.875em;
+  opacity: 0.85;
+  justify-content: flex-start;
+}
+
+.dirty-status {
+  color: #f5b041;
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+/* Layout */
+
+.settings-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px 16px 64px;
+}
+
+.card {
+  background: rgba(236, 240, 241, 0.06);
+  border: 1px solid rgba(236, 240, 241, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card h2:not(:first-child) {
+  margin-top: 1.25em;
+}
+
+.help {
+  font-size: 0.875em;
+  opacity: 0.8;
+  margin: 0 0 0.75em;
+}
+
+/* Form fields */
+
+.field {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.field > span {
+  display: block;
+  font-size: 0.875em;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.settings input[type="text"],
+.settings input[type="number"] {
+  width: 100%;
+  font: inherit;
+  color: #1B1464;
+  background: #ecf0f1;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 8px 10px;
+  min-width: 0;
+}
+
+.settings input:focus {
+  outline: none;
+  border-color: #27ae60;
+}
+
+.settings .invalid,
+.settings input.invalid {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.4);
+}
+
+.answers.invalid {
+  border-radius: 6px;
+  padding: 4px;
+}
+
+/* Rounds */
+
+.round-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.round-header h2 {
+  margin: 0;
+}
+
+.round-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 2.25em minmax(0, 1fr) 6em 2.5em;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.answer-head {
+  font-size: 0.875em;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+
+.answer-number {
+  background: #c0392b;
+  border-radius: 6px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.answer-points {
+  text-align: center;
+}
+
+/* Buttons */
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.button-row .help {
+  margin: 0;
+}
+
+.s-btn,
+.icon-btn {
+  font: inherit;
+  color: #ecf0f1;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.s-btn {
+  background: rgba(236, 240, 241, 0.15);
+  padding: 8px 14px;
+}
+
+.s-btn:hover,
+.s-btn:focus-visible {
+  background: rgba(236, 240, 241, 0.25);
+}
+
+.s-btn-save {
+  background: #27ae60;
+}
+
+.s-btn-save:hover,
+.s-btn-save:focus-visible {
+  background: #2ecc71;
+}
+
+.s-btn-danger {
+  background: #c0392b;
+}
+
+.s-btn-danger:hover,
+.s-btn-danger:focus-visible {
+  background: #e74c3c;
+}
+
+.s-btn-wide {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 2px dashed rgba(236, 240, 241, 0.3);
+  background: transparent;
+}
+
+.icon-btn {
+  background: transparent;
+  width: 2.25em;
+  height: 2.25em;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+.s-btn-small {
+  font-size: 0.875em;
+  padding: 6px 10px;
+}
+
+.icon-btn:hover,
+.icon-btn:focus-visible {
+  background: rgba(236, 240, 241, 0.15);
+}
+
+.s-btn:disabled,
+.icon-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: rgba(236, 240, 241, 0.15);
+}
+
+.icon-btn:disabled {
+  background: transparent;
+}
+
+.settings :focus-visible {
+  outline: 2px solid #ecf0f1;
+  outline-offset: 2px;
+}
+
+/* Messages */
+
+.notice {
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.notice p,
+.notice ul {
+  margin: 0;
+}
+
+.notice ul {
+  padding-left: 1.25em;
+  margin-top: 4px;
+}
+
+.notice-success {
+  background: rgba(39, 174, 96, 0.25);
+  border: 1px solid #27ae60;
+}
+
+.notice-error {
+  background: rgba(192, 57, 43, 0.3);
+  border: 1px solid #e74c3c;
+}
+
+.notice-warning {
+  background: rgba(245, 176, 65, 0.2);
+  border: 1px solid #f5b041;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 480px) {
+  .answer-row {
+    grid-template-columns: 2em minmax(0, 1fr) 4.5em 2.25em;
+    gap: 6px;
+  }
+}

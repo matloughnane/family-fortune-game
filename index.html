@@ -44,6 +44,11 @@
   </div>
 
 
+  <div class="bottom-left">
+    <a href="settings.html" class="settings-link" title="Edit questions and answers">
+      <i class="fas fa-cog"></i> Settings</a>
+  </div>
+
   <div class="bottom-right">
     <div class="row">
       <a id="previous" class="btn btn-secondary navigation">
@@ -68,9 +73,10 @@
 
 <script src="assets/js/common.js"></script>
 <script src="assets/js/data.js"></script>
+<script src="assets/js/store.js"></script>
 <script>
-  $('#title').html(quizTitle["title"]);
-  $('#subtitle').html(quizTitle["subtitle"]);
+  $('#title').text(getQuiz().title);
+  $('#subtitle').text(getQuiz().subtitle);
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
